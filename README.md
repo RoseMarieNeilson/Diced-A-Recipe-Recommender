@@ -50,5 +50,3 @@ Make web app user friendly and easy on the eyes
 Develop a good README
 
 ### Future Goals
-
-Everything I can't do in time
