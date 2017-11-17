@@ -1,8 +1,14 @@
-# How to pull fields from MongoDB
+# # How to pull fields from MongoDB
+#
+# cursor = savory_recipe_db.find({})
+# for document in cursor:
+#     print(document)
 
-cursor = savory_recipe_db.find({})
-for document in cursor:
-    print(document)
+import pandas as pd
+import json
+from pymongo import MongoClient
+
+
 
 def read_mongo(db, collection, query={}, host='localhost', port=27017, username=None, password=None, no_id=True):
     """ Read from Mongo and Store into DataFrame """
@@ -22,4 +28,9 @@ def simple_read_mongo(coll):
     return df
 
 if __name__ == '__main__':
-    df = simple_read_mongo(savory_recipe_db)
+    db_client = MongoClient()
+    db = db_client['allrecipes']
+    recipe_db = db['recipe_data']
+    savory_recipe_db = db['savory_recipe']
+    practice_db = db['practice']
+    df = simple_read_mongo(practice_db)
