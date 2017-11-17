@@ -85,7 +85,10 @@ if __name__ == '__main__':
 
     others = ["http://allrecipes.com/recipe/13838/sugar-coated-pecans/", "http://allrecipes.com/recipe/17753/coconut-shrimp-i/", "http://allrecipes.com/recipe/81298/playgroup-granola-bars/", "http://allrecipes.com/recipe/69919/bacon-wrapped-smokies/", "http://allrecipes.com/recipe/25502/southwestern-egg-rolls/"]
 
-    mongo_list = scrape_search(others)
+    dinner = ["http://allrecipes.com/recipe/190100/porkolt-hungarian-stew-made-with-pork/", "http://allrecipes.com/video/7761/cider-braised-pork-shoulder/", "http://dish.allrecipes.com/rich-and-delicious-pumpkin-pastas-for-fall/", "http://allrecipes.com/recipes/17139/main-dish/chicken/chicken-marsala/", "http://allrecipes.com/recipe/23600/worlds-best-lasagna/", "http://allrecipes.com/recipe/178498/mushroom-slow-cooker-roast-beef/", "http://allrecipes.com/recipe/23431/to-die-for-fettuccine-alfredo/", "http://allrecipes.com/recipe/223042/chicken-parmesan/", "http://allrecipes.com/recipe/51283/maple-salmon/", "http://allrecipes.com/recipe/25203/brown-sugar-meatloaf/", "http://allrecipes.com/recipe/219164/the-best-parmesan-chicken-bake/", "http://allrecipes.com/recipe/220854/chef-johns-italian-meatballs/", "http://allrecipes.com/recipe/222002/chef-johns-stuffed-peppers/", "http://allrecipes.com/recipe/83557/juicy-roasted-chicken/"]
+    dinner_more = ["http://allrecipes.com/recipe/235997/unstuffed-cabbage-roll/", "http://allrecipes.com//recipe/15679/asian-beef-with-snow-peas/", "http://allrecipes.com/recipe/23847/pasta-pomodoro/", "http://allrecipes.com/recipe/50435/fry-bread-tacos-ii/", ]
+
+    mongo_list = scrape_search(dinner)
     store_data(mongo_list, recipe_db)
 
 # cursor = recipe_db.find({})
