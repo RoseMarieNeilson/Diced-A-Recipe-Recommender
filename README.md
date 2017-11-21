@@ -2,12 +2,12 @@
 
 1. [Concept](#concept)
 2. [Data](#data)
-3. [Data Storage](#data_storage)
-4. [Natural Language Processing](#natural_language_processing)
+3. [Data Storage](#data-storage)
+4. [Natural Language Processing](#natural-language-processing)
 5. [Modeling](#modeling)
-6. [Web App](#web_app)
+6. [Web App](#web-app)
 7. [Visualization](#visualization)
-8. [Future Goals](#future_goals)
+8. [Future Goals](#future-goals)
 
 
 
