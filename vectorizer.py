@@ -1,9 +1,32 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-
+'''
 http://blog.untrod.com/2016/06/simple-similar-products-recommendation-engine-in-python.html
 vectorizer, unknowns, ignore
+'''
+
+class TextClassifer(object):
+    ''' vectorize the preproccessed text into features'''
+
+    def __init__(self):
+        self._vectorizer = TfidfVectoizer()
+
+    def fit(self, X):
+        '''fit_transform the vectorizer'''
+        Tfidf = self._vectorizer.fit_transform(X)
+
+    def transform(self, X):
+        new_Tfidf = self._vectorizer.transform(X)
+
+if __name__ == '__main__':
+    X = clean_data
+    tc = TextClassifer
+    tc.fit(X)
+    
+
+
+
 
 data = df['clean']
 

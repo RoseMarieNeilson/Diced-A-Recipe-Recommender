@@ -1,5 +1,18 @@
 # Diced-capstone
 
+[Concept](concept)
+[Data](data)
+[Data Storage](data_storage)
+[Natural Language Processing](natural_language_processing)
+[Modeling](modeling)
+[Web App](web_app)
+[Visualization](visualization)
+[Future Goals](future_goals)
+
+
+
+
+
 ### Concept
 The goal of this project is to create a recipe recommender system that will produce recipe suggestions based on ingredients the user has on hand. This app will also provide ratings of the recipes based on the star ratings provided by the scraped data from Allrecipes.com. A further goal would be to create user profiles that can rate recipes and get improved suggestions with time.
 
@@ -30,7 +43,10 @@ A web app using flask will be developed and run on AWS.
 
 
 ### Visualization
-Word clouds
+
+  ![Word clouds](images/Figure_1.png)
+
+  <br />
 
 
 ### Schedule
