@@ -42,7 +42,7 @@ A web app using flask will be developed and run on AWS.
 
 ### Visualization
 
-  ![Word clouds](images/Figure_1.png)
+  ![Word clouds](Figure_1.png)
 
   <br />
 
