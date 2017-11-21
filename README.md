@@ -1,4 +1,3 @@
-# Diced-capstone
 
 1. [Concept](concept)
 2. [Data](data)
@@ -10,7 +9,7 @@
 8. [Future Goals](future_goals)
 
 
-
+# Diced-capstone
 
 
 ### 1. Concept
