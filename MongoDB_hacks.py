@@ -33,4 +33,4 @@ if __name__ == '__main__':
     recipe_db = db['recipe_data']
     savory_recipe_db = db['savory_recipe']
     practice_db = db['practice']
-    df = simple_read_mongo(practice_db)
+    df = simple_read_mongo(savory_recipe_db)

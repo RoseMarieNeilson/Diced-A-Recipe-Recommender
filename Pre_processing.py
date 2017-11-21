@@ -14,13 +14,15 @@ from pymongo import MongoClient
     three = list(ingredients[0:3]) (get a small list of ingredients to work on)
  '''
 
-stop_words_singular = ['freshly', 'head', 'chunk', 'cup', 'teaspoon', 'tablespoon', 'pound', 'ounce', 'ground', 'grind', 'powder', 'can', 'large', 'loaf', 'skinless', 'spray', 'such', 'and', 'each', 'portion', 'quarters', 'slices', 'package', 'food', 'diced', 'or', 'to', 'optional', 'boneless','®', 'RO*TEL', 'and', 'spray', 'at', 'joint', 'inch', 'piece', 'pinch', 'half', 'third', 'white', 'quart', 'deep', 'frying', 'halve', 'fry', 'all', 'purpose' ]
+stop_words_singular = ['fresh', 'head', 'chunk', 'cup', 'teaspoon', 'tablespoon', 'pound', 'ounce', 'ground', 'grind', 'powder', 'can', 'large', 'loaf', 'skinless', 'spray', 'such', 'and', 'each', 'portion', 'quarters', 'slice', 'package', 'food', 'dice', 'or', 'to', 'optional', 'boneless','®', 'RO*TEL', 'and', 'spray', 'at', 'joint', 'inch', 'piece', 'pinch', 'half', 'third', 'white', 'quart', 'deep', 'frying', 'halve', 'fry', 'all', 'purpose', 'wide', 'thick', 'sprig', 'more', 'sharp', 'chuck', '2-inch', 'flat', 'leaf', 'floret', 'light', 'thin', 'blend','slice', 'small', 'cube', 'style', 'garnish', 'fine', 'natural', 'plus', 'much', 'granule', 'rough', 'casing', 'container', 'lean', 'sheet', 'mild', 'extra', 'jar', 'finely', 'spin-dry', 'bit', 'fat', 'giblets', 'stalk', 'freshly', 'thinly', 'lightly', 'real', 'bit', 'prepare', 'roughly', 'rough', 'low', 'sodium', 'uncooked', 'freeze', 'pasta', 'skim', 'part', 'strip', 'grate', 'crosswise', 'lengthwise', 'room', 'temperature', 'bottle', 'tough', 'bunch', 'bulk', 'store', 'refrigerated', 'dish', 'lightly', 'virgin', 'medium', 'pulp', 'wedge', 'the', 'no', 'boil', 'liquid', 'bite', 'size', 'clove', '1-inch', 'box', 'quarter', 'shred', 'shredded', 'enough', 'tart', 'core', 'cored', 'tough', 'bunch', 'undrained', 'your', 'favorite']
 
+'''what about jumbo?'''
 nlp = en_core_web_sm.load()
 nlp.vocab.add_flag(lambda string: string in stop_words, IS_STOP)
 
 #doc = nlp(document)
-corpus = simple_read_mongo(coll)
+df = simple_read_mongo(coll)
+corpus = list(df.ingred_list)
 
 def nlp_list(ingredients_list):
     doc = []
@@ -75,8 +77,8 @@ def remove_extra_quotes(recipe):
 
 clean = [remove_extra_quotes(i) for i in combined]
 
-def add_combined_to_df(combined):
-    df['combined'] = combined
+def add_cleaned_to_df(clean):
+    df['clean'] = clean
 
 def add_to_mongo(coll, df):
     for x in range(0,len(df)):
@@ -84,6 +86,9 @@ def add_to_mongo(coll, df):
 
 def add_to_mongo(coll, df):
     coll.update({'item_name': df.item_name[0]}, {'$set': {'combined': df.combined[0]}})
+
+
+def sanitize_imports():
 
 
 
