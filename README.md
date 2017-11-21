@@ -1,15 +1,14 @@
-
-1. [Concept](concept)
-2. [Data](data)
-3. [Data Storage](data_storage)
-4. [Natural Language Processing](natural_language_processing)
-5. [Modeling](modeling)
-6. [Web App](web_app)
-7. [Visualization](visualization)
-8. [Future Goals](future_goals)
-
-
 # Diced-capstone
+
+1. [Concept](#concept)
+2. [Data](#data)
+3. [Data Storage](#data_storage)
+4. [Natural Language Processing](#natural_language_processing)
+5. [Modeling](#modeling)
+6. [Web App](#web_app)
+7. [Visualization](#visualization)
+8. [Future Goals](#future_goals)
+
 
 
 ### 1. Concept
