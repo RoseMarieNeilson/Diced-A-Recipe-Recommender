@@ -26,7 +26,7 @@ The data is kept in a MongoDB database due to its json like format.
 
 ### Visualization
 
-    ![Word clouds](Figure_1.png)
+  ![Word clouds](Figure_1.png)
 
     <br />
 
