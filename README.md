@@ -12,39 +12,33 @@
 
 
 ### Concept
-The goal of this project is to create a recipe recommender system that will produce recipe suggestions based on ingredients the user has on hand. This app will also provide ratings of the recipes based on the star ratings provided by the scraped data from Allrecipes.com. A further goal would be to create user profiles that can rate recipes and get improved suggestions with time.
+The goal of this project is to create a recipe recommender system that will produce recipe suggestions based on ingredients the user has on hand. This app will also provide ratings of the recipes based on the star ratings provided by the scraped data from Allrecipes.com. The remaining ingredients needed for the recipe will be added to a grocery list. There will also be a link to potential coupons and savings that can be had. A further goal would be to create user profiles that can rate recipes and get improved suggestions with time.
 
 ### Data
-Data was scraped from Allrecipes.com using BeautifulSoup with an attempt to get a variety of recipes under topics such as dessert, dinner, and appetizers. It was stored in a MongoDB database with the following keys: item_name, ingredient_list, direction_list, stars, submitter_name, and submitter_desc.
+Data was scraped from Allrecipes.com using BeautifulSoup with an attempt to get a variety of recipes under topics such as dessert, dinner, and appetizers. These were then divided between two databases for sweet and savory recipes. It was stored in a MongoDB database with the following keys: item_name, ingredient_list, direction_list, stars, submitter_name, and submitter_desc.
 
 
 ### Data Storage
-The data will be stored on an S3 bucket.
-
+The data is kept in a MongoDB database due to its json like format.
 
 ### Natural Language Processing
-  In order to recommend recipes the ingredient list column needs to processed. This includes removing stop words ('cup', 'teaspoon', etc), lower casing all words, and experimenting with different stemming and lemmatizing techniques to find the root words (changing 'apples' to 'apple').
-  call counter on my words, see what's most common.
-
-### Modeling
-Distance metric (cosine similarity), pairwise similarity. content based recommender. ingredient comparison for recipes. pull recipes that are most similar. bonus would be to order by similarity and stars. Extra bonus would be t make a hybrid recommender.
-
-### Resources to read
-https://www.kernix.com/blog/recommender-system-based-on-natural-language-processing_p10
-
-https://in.pycon.org/cfp/2016/proposals/creating-a-recommendation-engine-based-on-nlp-and-contextual-word-embeddings~aOZGe/?ref=schedule
-
-http://courses.ischool.berkeley.edu/i256/f09/Final%20Projects%20write-ups/Suzuki_Park_project_final.pdf
-
-### Web App
-A web app using flask will be developed and run on AWS.
-
+  In order to recommend recipes the ingredient list column needs to processed. This includes removing stop words ('cup', 'teaspoon', etc), lower casing all words, and experimenting with different stemming and lemmatizing techniques to find the root words (changing 'apples' to 'apple'). The ingredients with multiple words were combined with underscores. This changed 'green pepper' to 'green_pepper' and helped to vectorize the data. The ingredients were vectorized with TF-IDF, which more heavily weighted the more 'rare' ingredients. This means that ingredients such as 'butter' and 'salt' were less indicative of similarity.
 
 ### Visualization
 
-  ![Word clouds](Figure_1.png)
+    ![Word clouds](Figure_1.png)
 
-  <br />
+    <br />
+
+### Modeling
+The similarity of recipes was found by comparing the cosine similarity of the users input ingredients and the cosine similarity of the recipes in the MongoDb database. This returns the most similar recipes and they are also ranked by stars to see which is the most similar and the tastiest. Extra bonus would be t make a hybrid recommender.
+
+
+### Web App
+A web app using flask will be developed and run on AWS. This app offers popular recipes on the landing page as well as recommended recipes and the ability to create grocery lists.
+
+
+
 
 
 ### Schedule
