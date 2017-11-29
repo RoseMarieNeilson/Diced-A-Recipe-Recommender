@@ -72,3 +72,5 @@ I would like to scrape user profiles from Allrecipes so that I can create a hybr
 
 
 ### 9. Acknowledgments
+Thank you Chefnet for WebScraping assistance.
+Thank you w3 schools for a css_template and assistance with learning html
