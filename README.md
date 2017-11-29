@@ -23,13 +23,10 @@ show image of spacy tokens
 ### Data Storage
 The data is kept in a MongoDB database due to its json like format.
 
-| Combined                          | Direction_list | Ingred_list                 |
-|:--------------------------------: |:--------------:|:---------------------------:|
-|'cauliflower mozzarella_cheese...  |'Preheat oven...|'1 large head cauliflower... |
+| Combined                          | Direction_list | Ingred_list                 |Item_name              |Stars |Submitter_desc|
+|:--------------------------------: |:--------------:|:---------------------------:|:---------------------:|:----:|:------------:|
+|'cauliflower mozzarella_cheese...  |'Preheat oven...|'1 large head cauliflower... |Cauliflower Pizza Bites|4.588 |Just like...  |
 
-|Item_name              |Stars |Submitter_desc|
-|:---------------------:|:----:|:------------:|
-|Cauliflower Pizza Bites|4.588 |Just like...  |
 
 
 
