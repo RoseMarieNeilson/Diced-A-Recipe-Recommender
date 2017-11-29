@@ -49,35 +49,27 @@ def predict():
     title = similar_items[1][0][4]
     description = similar_items[1][0][6]
     ingredients = similar_items[1][0][3]
+    stars = similar_items[1][0][5]
     title_2 = similar_items[2][0][4]
     description_2 = similar_items[2][0][6]
     ingredients_2 = similar_items[2][0][3]
+    stars_2 = similar_items[2][0][5]
     title_3 = similar_items[3][0][4]
     description_3 = similar_items[3][0][6]
     ingredients_3 = similar_items[3][0][3]
+    stars_3 = similar_items[3][0][5]
     ingredients_for_groceries = similar_items[1][0][1]
 
-    return render_template('predict_template.html', data = (title, description, ingredients, title_2, description_2, ingredients_2, title_3, description_3, ingredients_3), ingredients=ingredients_for_groceries, input_ingredients=clean)
+    return render_template('predict_template.html', data = (title, stars, description, ingredients, title_2, stars_2, description_2, ingredients_2, title_3,  stars_3, description_3, ingredients_3), ingredients=ingredients_for_groceries, input_ingredients=clean)
 
 @app.route('/get_groceries', methods=['GET', 'POST'])
 def get_groceries():
     input_ingredients = request.args.get('input_ingredients')
     choice = request.args.get('ingredients')
-    print(type(input_ingredients))
-    print(input_ingredients)
-    print(type(choice))
-    print(choice)
     choice_update = choice.split(' ')
-    print(type(choice_update))
-    print(choice_update)
     input_ingredients_update = input_ingredients
-    print(type(input_ingredients_update))
-    print(input_ingredients_update)
     grocery_list = [val for val in choice_update if val not in input_ingredients_update]
-    print(type(grocery_list))
-    print(grocery_list)
     grocery_update = [grocery_list[i].replace('_', ' ') for i in range(len(grocery_list))]
-    print(grocery_update)
     return render_template('grocery_template.html', data=grocery_update)
 
 if __name__ == '__main__':
