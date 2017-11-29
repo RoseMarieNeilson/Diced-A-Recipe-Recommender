@@ -8,6 +8,7 @@
 6. [Web App](#web-app)
 7. [Visualization](#visualization)
 8. [Future Goals](#future-goals)
+9. [Acknowledgments](#acknowledgments)
 
 
 
@@ -16,10 +17,22 @@ The goal of this project is to create a recipe recommender system that will prod
 
 ### Data
 Data was scraped from Allrecipes.com using BeautifulSoup with an attempt to get a variety of recipes under topics such as dessert, dinner, and appetizers. These were then divided between two databases for sweet and savory recipes. It was stored in a MongoDB database with the following keys: item_name, ingredient_list, direction_list, stars, submitter_name, and submitter_desc.
+show image of spacy tokens
 
 
 ### Data Storage
 The data is kept in a MongoDB database due to its json like format.
+
+| Combined                          | Direction_list | Ingred_list                 |
+|:--------------------------------: |:--------------:|:---------------------------:|
+|'cauliflower mozzarella_cheese...  |'Preheat oven...|'1 large head cauliflower... |
+
+|Item_name              |Stars |Submitter_desc|
+|:---------------------:|:----:|:------------:|
+|Cauliflower Pizza Bites|4.588 |Just like...  |
+
+
+
 
 ### Natural Language Processing
   In order to recommend recipes the ingredient list column needs to processed. This includes removing stop words ('cup', 'teaspoon', etc), lower casing all words, and experimenting with different stemming and lemmatizing techniques to find the root words (changing 'apples' to 'apple'). The ingredients with multiple words were combined with underscores. This changed 'green pepper' to 'green_pepper' and helped to vectorize the data. The ingredients were vectorized with TF-IDF, which more heavily weighted the more 'rare' ingredients. This means that ingredients such as 'butter' and 'salt' were less indicative of similarity.
@@ -41,20 +54,10 @@ A web app using flask will be developed and run on AWS. This app offers popular 
 
 
 
-### Schedule
 
-11/14-11/17
-Read relevant articles about best approaches
-Test different NLP techniques and develop a pipeline to test on new data. Potentially switch from removing stopwords to generating a list of accepted ingredients   
-11/18-11/19
-Develop an MVP and begin to test other models and potentially look into more sophisticated methods(adding stars rating system).
-11/20-11/24
-Select best model and optimize parameters.
-Develop Web App MVP.
-11/25-11/28
-Make the Web App look pretty.
-Continue to scrape data and make the database more robust.
-Make web app user friendly and easy on the eyes
-Develop a good README
 
 ### 8. Future Goals
+
+
+
+### 9. Acknowledgments

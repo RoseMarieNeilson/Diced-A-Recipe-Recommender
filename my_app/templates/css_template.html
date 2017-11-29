@@ -11,98 +11,77 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 </style>
 <body>
 
-<!-- Sidebar (hidden by default) -->
-<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()"
-  class="w3-bar-item w3-button">Close Menu</a>
-  <a href="#food" onclick="w3_close()" class="w3-bar-item w3-button">Food</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
-</nav>
 
-<!-- Top menu -->
-<div class="w3-top">
-  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
-    <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
-    <div class="w3-right w3-padding-16">Mail</div>
-    <div class="w3-center w3-padding-16">Diced</div>
-    <button onclick="location.href = '/get_recommendation';" class="w3-center w3-button w3-black w3-padding-large w3-large w3-margin-top">Looking for a recipe?</button>
-  </div>
-</div>
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32">
+  <h1><b>Diced</b></h1>
+  <button onclick="location.href = '/get_recommendation';" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-center">Looking for a recipe?</button>
+</header>
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 
   <!-- First Photo Grid-->
-  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+  <div class="w3-row-padding w3-padding-16 w3-center">
     <div class="w3-quarter">
-      <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
-      <h3>The Perfect Sandwich, A Real NYC Classic</h3>
-      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <img src="static/teriyaki.jpg" alt="chicken" style="width:100%">
+      <button onclick="location.href = 'http://allrecipes.com/recipe/9023/baked-teriyaki-chicken/?internalSource=previously%20viewed&referringContentType=home%20page&clickId=cardslot%205';" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-center">Baked Chicken Teriyaki</button>
+      <p>A spicy, homemade teriyaki of soy sauce, cider vinegar, ginger and garlic enlivens chicken thighs of pieces. Easy to double for a large group</p>
     </div>
     <div class="w3-quarter">
-      <img src="/w3images/steak.jpg" alt="Steak" style="width:100%">
-      <h3>Let Me Tell You About This Steak</h3>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <img src="static/lasagna.jpg" alt="lasagna" style="width:100%">
+      <button onclick="location.href ='http://allrecipes.com/recipe/23600/worlds-best-lasagna/?internalSource=previously%20viewed&referringContentType=home%20page&clickId=cardslot%2011';" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-center">World's Best Lasagna</button>
+      <p>Filling and satisfying, John Chandler's lasagna is our most popular recipe. With basil, sausage, ground beef and three types of cheese, it lives up to its name</p>
     </div>
     <div class="w3-quarter">
-      <img src="/w3images/cherries.jpg" alt="Cherries" style="width:100%">
-      <h3>Cherries, interrupted</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-      <p>What else?</p>
+      <img src="static/asian_beef.jpg" alt="Cherries" style="width:100%">
+      <button onclick="location.href ='http://allrecipes.com/recipe/15679/asian-beef-with-snow-peas/?internalSource=staff%20pick&referringId=17562&referringContentType=recipe%20hub';" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-center">Asian Beef with Snow Peas</button>
+      <p>Asian Beef with snow peas in a light gingery sauce.</p>
     </div>
     <div class="w3-quarter">
-      <img src="/w3images/wine.jpg" alt="Pasta and Wine" style="width:100%">
-      <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <img src="static/salmon.jpg" alt="Pasta and Wine" style="width:100%">
+      <button onclick="location.href ='http://allrecipes.com/recipe/80388/lemon-rosemary-salmon/?internalSource=staff%20pick&referringId=17562&referringContentType=recipe%20hub';" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-center">Lemon Rosemary Salmon</button>
+      <p>Salmon fillets are baked with lemon, rosemary, olive oil, and coarse salt in this simple recipe.</p>
     </div>
   </div>
 
   <!-- Second Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center">
     <div class="w3-quarter">
-      <img src="/w3images/popsicle.jpg" alt="Popsicle" style="width:100%">
-      <h3>All I Need Is a Popsicle</h3>
-      <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <img src="static/sugar_cookie.jpg" alt="sugar" style="width:100%">
+      <button onclick="location.href ='http://allrecipes.com/recipe/9864/cracked-sugar-cookies-i/?internalSource=hub%20recipe&referringId=841&referringContentType=recipe%20hub;" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-center">Cracked Sugar Cookies</button>
+      <p>This recipe makes a nice sugar cookie with a soft center</p>
     </div>
     <div class="w3-quarter">
-      <img src="/w3images/salmon.jpg" alt="Salmon" style="width:100%">
-      <h3>Salmon For Your Skin</h3>
-      <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <img src="static/biscotti.jpg" alt="biscotti" style="width:100%">
+      <button onclick="location.href ='http://allrecipes.com/recipe/17241/biscotti/?internalSource=hub%20recipe&referringId=841&referringContentType=recipe%20hub';" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-center">Biscotti</button>
+      <p>This is a simple, no frills biscotti. My friend at work gave this recipe to me. It's quick, easy, and one of my favorite Italian cookie recipes.</p>
     </div>
     <div class="w3-quarter">
-      <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
-      <h3>The Perfect Sandwich, A Real Classic</h3>
-      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <img src="static/caramel_cookies.jpg" alt="Sandwich" style="width:100%">
+      <button onclick="location.href ='http://allrecipes.com/recipe/10642/caramel-filled-chocolate-cookies/?internalSource=hub%20recipe&referringId=841&referringContentType=recipe%20hub';" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-center">Caramel Filled Chocolate Cookies</button>
+      <p>Chocolate cookie dough is wrapped around caramel filled chocolate candies. We have these at Christmas each year, They are delicious! Hope you enjoy them too.</p>
     </div>
     <div class="w3-quarter">
-      <img src="/w3images/croissant.jpg" alt="Croissant" style="width:100%">
-      <h3>Le French</h3>
-      <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+      <img src="static/rosenmunnar.jpg" alt="Croissant" style="width:100%">
+      <button onclick="location.href ='http://allrecipes.com/recipe/23600/worlds-best-lasagna/?internalSource=previously%20viewed&referringContentType=home%20page&clickId=cardslot%2011';" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-center">Rosenmunnar</button>
+      <p>Butter, sugar, flour, and jam are all you need to make these Swedish thumbprint cookies.</p>
     </div>
   </div>
 
-  <!-- Pagination -->
-  <div class="w3-center w3-padding-32">
-    <div class="w3-bar">
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-    </div>
-  </div>
+
 
   <hr id="about">
 
   <!-- About Section -->
   <div class="w3-container w3-padding-32 w3-center">
-    <h3>About Me, The Food Man</h3><br>
-    <img src="/w3images/chef.jpg" alt="Me" class="w3-image" style="display:block;margin:auto" width="800" height="533">
+    <h3>Recipe Recommender</h3><br>
+    <img src="static/RoseNeilson.jpg" alt="Me" class="w3-image" style="display:block;margin:auto" width="200" height="50">
     <div class="w3-padding-32">
-      <h4><b>I am Who I Am!</b></h4>
-      <h6><i>With Passion For Real, Good Food</i></h6>
-      <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      <h4><b>Created by Rose Marie Neilson</b></h4>
+      <h6><i>With a Passion for Good
+        Food and Good Data Science</i></h6>
+      <p>The goal of this project is to introduce you to new and exciting recipes or to remind you of an old favorite! This website works by entering what ingredients you have on hand and having recipes returned that match the ingredients you have and add a few more for your grocery list. </p>
     </div>
   </div>
   <hr>
@@ -110,37 +89,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   <!-- Footer -->
   <footer class="w3-row-padding w3-padding-32">
     <div class="w3-third">
-      <h3>FOOTER</h3>
-      <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+
       <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
     </div>
 
-    <div class="w3-third">
-      <h3>BLOG POSTS</h3>
-      <ul class="w3-ul w3-hoverable">
-        <li class="w3-padding-16">
-          <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
-          <span class="w3-large">Lorem</span><br>
-          <span>Sed mattis nunc</span>
-        </li>
-        <li class="w3-padding-16">
-          <img src="/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
-          <span class="w3-large">Ipsum</span><br>
-          <span>Praes tinci sed</span>
-        </li>
-      </ul>
-    </div>
 
-    <div class="w3-third w3-serif">
-      <h3>POPULAR TAGS</h3>
-      <p>
-        <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dinner</span>
-        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Salmon</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">France</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Drinks</span>
-        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Flavors</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Cuisine</span>
-        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Chicken</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dressing</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fried</span>
-        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fish</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Duck</span>
-      </p>
-    </div>
+
+
   </footer>
 
 <!-- End page content -->
