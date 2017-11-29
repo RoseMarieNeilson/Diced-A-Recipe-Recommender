@@ -49,15 +49,15 @@ A web app using flask will be developed and run on AWS. This app offers popular 
 
   ![Opening](images_/opening.png)
 
-    <br>
+    </br>
 
   ![Input](images_/input.png)
 
-    <br>
+    </br>
 
   ![Recipes](images_/recipes.png)
 
-    <br>
+    </br>
 
   ![Groceries](images_/grocery.png)
 
