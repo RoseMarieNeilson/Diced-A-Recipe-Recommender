@@ -36,9 +36,9 @@ The data is kept in a MongoDB database due to its json like format.
 
 ### Visualization
 
-  ![Word clouds](Figure_1.png)
+    ![Word clouds](Figure_1.png)
 
-    <br />
+
 
 ### Modeling
 The similarity of recipes was found by comparing the cosine similarity of the users input ingredients and the cosine similarity of the recipes in the MongoDb database. This returns the most similar recipes and they are also ranked by stars to see which is the most similar and the tastiest. Extra bonus would be t make a hybrid recommender.
@@ -47,6 +47,19 @@ The similarity of recipes was found by comparing the cosine similarity of the us
 ### Web App
 A web app using flask will be developed and run on AWS. This app offers popular recipes on the landing page as well as recommended recipes and the ability to create grocery lists.
 
+    ![Opening](opening.png)
+
+    <br>
+
+    ![Input](input.png)
+
+    <br>
+
+    ![Recipes](recipes.png)
+
+    <br>
+
+    ![Groceries](grocery.png)
 
 
 
@@ -54,6 +67,7 @@ A web app using flask will be developed and run on AWS. This app offers popular 
 
 
 ### 8. Future Goals
+I would like to scrape user profiles from Allrecipes so that I can create a hybrid recommender system. These profiles will be ones that have rated multiple recipes and using their ratings I will be able to predict other well liked recipes.
 
 
 
