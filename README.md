@@ -47,19 +47,19 @@ The similarity of recipes was found by comparing the cosine similarity of the us
 ### Web App
 A web app using flask will be developed and run on AWS. This app offers popular recipes on the landing page as well as recommended recipes and the ability to create grocery lists.
 
-    ![Opening](opening.png)
+    ![Opening](images_/opening.png)
 
     <br>
 
-    ![Input](input.png)
+    ![Input](images_/input.png)
 
     <br>
 
-    ![Recipes](recipes.png)
+    ![Recipes](images_/recipes.png)
 
     <br>
 
-    ![Groceries](grocery.png)
+    ![Groceries](images_/grocery.png)
 
 
 
