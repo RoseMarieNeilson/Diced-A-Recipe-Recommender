@@ -55,6 +55,7 @@ def predict():
     ingredients = similar_items[-1][0][3]
     stars = similar_items[-1][0][6][:3]
     link= similar_items[-1][0][5]
+    print(link)
     title_2 = similar_items[-2][0][4]
     description_2 = similar_items[-2][0][7]
     ingredients_2 = similar_items[-2][0][3]

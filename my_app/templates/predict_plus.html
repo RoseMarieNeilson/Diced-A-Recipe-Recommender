@@ -63,7 +63,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
       {% for line in data[3] %}
       <h4><b>{{line}}</b></h4>
       {% endfor %}
-      <button onclick="location.href = {{data[4]}};" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-center">Head to allrecipes for the rest!</button>
+      <button onclick="location.href = '{{data[4]}}';" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-center">Head to allrecipes for the rest!</button>
     </div>
   </br>
     <div class="w3-container w3-card w3-white w3-margin-bottom">
@@ -76,7 +76,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
       {% for line in data[8] %}
       <h4><b>{{line}}</b></h4>
       {% endfor %}
-      <button onclick="location.href = {{data[9]}};" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-center">Head to allrecipes for the rest!</button>
+      <button onclick="location.href = '{{data[9]}}'';" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-center">Head to allrecipes for the rest!</button>
     </div>
   </br>
     <div class="w3-container w3-card w3-white w3-margin-bottom">
@@ -85,11 +85,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
       <h4><b>{{data[11]}} Stars</b></h4>
       <br> </br>
       <h4><b>{{data[12]}}</b></h4>
+      <h4><b>words</b></h4>
       <br> </br>
       {% for line in data[13] %}
       <h4><b>{{line}}</b></h4>
       {% endfor %}
-      <button onclick="location.href = {{data[14]}};" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-center">Head to allrecipes for the rest!</button>
+      <br> </br>
+      <button onclick="location.href = '{{data[14]}}';" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-center">Head to allrecipes for the rest!</button>
     </div>
 
   </div>
