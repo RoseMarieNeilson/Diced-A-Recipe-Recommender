@@ -49,22 +49,26 @@ stop_words_singular = ['fresh', 'head', 'chunk', 'cup', 'teaspoon', 'tablespoon'
 
 if __name__ == '__main__':
     nlp = en_core_web_sm.load()
-    stop_words_singular = ['fresh', 'head', 'chunk', 'cup', 'teaspoon', 'tablespoon', 'pound', 'ounce', 'ground', 'grind', 'powder', 'can', 'large', 'loaf', 'skinless', 'spray', 'such', 'and', 'each', 'portion', 'quarters', 'slice', 'package', 'food', 'dice', 'or', 'to', 'optional', 'boneless','®', 'RO*TEL', 'and', 'spray', 'at', 'joint', 'inch', 'piece', 'pinch', 'half', 'third', 'white', 'quart', 'deep', 'frying', 'halve', 'fry', 'all', 'purpose', 'wide', 'thick', 'sprig', 'more', 'sharp', 'chuck', '2-inch', 'flat', 'leaf', 'floret', 'light', 'thin', 'blend','slice', 'small', 'cube', 'style', 'garnish', 'fine', 'natural', 'plus', 'much', 'granule', 'rough', 'casing', 'container', 'lean', 'sheet', 'mild', 'extra', 'jar', 'finely', 'spin-dry', 'bit', 'fat', 'giblets', 'stalk', 'freshly', 'thinly', 'lightly', 'real', 'bit', 'prepare', 'roughly', 'rough', 'low', 'sodium', 'uncooked', 'freeze', 'pasta', 'skim', 'part', 'strip', 'grate', 'crosswise', 'lengthwise', 'room', 'temperature', 'bottle', 'tough', 'bunch', 'bulk', 'store', 'refrigerated', 'dish', 'lightly', 'virgin', 'medium', 'pulp', 'wedge', 'the', 'no', 'boil', 'liquid', 'bite', 'size', 'clove', '1-inch', 'box', 'quarter', 'shred', 'shredded', 'enough', 'tart', 'core', 'cored', 'tough', 'bunch', 'undrained', 'your', 'favorite']
-    df = simple_read_mongo(savory_recipe_db)
+    stop_words_singular = ['fresh', 'head', 'chunk', 'cup', 'teaspoon', 'tablespoon', 'pound', 'ounce', 'ground', 'grind', 'powder', 'can', 'large', 'loaf', 'skinless', 'spray', 'such', 'and', 'each', 'portion', 'quarters', 'slice', 'package', 'food', 'dice', 'or', 'to', 'optional', 'boneless','®', 'RO*TEL', 'and', 'spray', 'at', 'joint', 'inch', 'piece', 'pinch', 'half', 'third', 'white', 'quart', 'deep', 'frying', 'halve', 'fry', 'all', 'purpose', 'wide', 'thick', 'sprig', 'more', 'sharp', 'chuck', '2-inch', 'flat', 'leaf', 'floret', 'light', 'thin', 'blend','slice', 'small', 'cube', 'style', 'garnish', 'fine', 'natural', 'plus', 'much', 'granule', 'rough', 'casing', 'container', 'lean', 'sheet', 'mild', 'extra', 'jar', 'finely', 'spin-dry', 'bit', 'fat', 'giblets', 'stalk', 'freshly', 'thinly', 'lightly', 'real', 'bit', 'prepare', 'roughly', 'rough', 'low', 'sodium', 'uncooked', 'freeze', 'skim', 'part', 'strip', 'grate', 'crosswise', 'lengthwise', 'room', 'temperature', 'bottle', 'tough', 'bunch', 'bulk', 'store', 'refrigerated', 'dish', 'lightly', 'virgin', 'medium', 'pulp', 'wedge', 'the', 'no', 'boil', 'liquid', 'bite', 'size', 'clove', '1-inch', 'box', 'quarter', 'shred', 'shredded', 'enough', 'tart', 'core', 'cored', 'tough', 'bunch', 'undrained', 'your', 'favorite']
+    db_client = MongoClient()
+    db = db_client['allrecipes']
+    savory_recipe= db['actual']
+    df = simple_read_mongo(savory_recipe)
     '''
-    to clean and add corpus
+    to clean and add corpus'''
     corpus = list(df.ingred_list)
     list_nlp = [nlp_list(i) for i in corpus]
     removed = [remove_pos_list(i) for i in list_nlp]
     combined = [combine_words_list(i) for i in removed]
     clean = [remove_extra_quotes(i) for i in combined]
     add_cleaned_to_df(clean)
-    '''
+    add_to_mongo(savory_recipe, df)
     '''
     to clean ingredient list'''
+    '''
     ingredients = input_ingredients
     list_nlp = nlp_list(ingredients)
     remove = remove_pos_list(list_nlp)
     combine = combine_words_list(remove)
     clean = remove_extra_quotes(combine)
-    clean_raw = [clean]
+    clean_raw = [clean]'''

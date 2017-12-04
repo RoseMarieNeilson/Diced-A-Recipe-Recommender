@@ -29,13 +29,15 @@ class TextClassifer(object):
 if __name__ == '__main__':
     db_client = MongoClient()
     db = db_client['allrecipes']
-    savory_recipe_db = db['savory_recipe']
-    df = simple_read_mongo(savory_recipe_db)
+    savory_recipe = db['actual']
+    df = simple_read_mongo(savory_recipe)
     X = df['combined']
     tc = TextClassifer()
     Tfidf = tc.fit(X)
     nlp = en_core_web_sm.load()
-    with open('data/model.pkl', 'wb') as f:
+    with open ('data/pandas_actual.pkl', 'wb') as f:
+        pickle.dump(df, f)
+    with open('data/model_actual.pkl', 'wb') as f:
         pickle.dump(tc, f)
-    with open('data/tfidf.pkl', 'wb') as f:
+    with open('data/tfidf_actual.pkl', 'wb') as f:
         pickle.dump(Tfidf, f)

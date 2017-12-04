@@ -36,9 +36,9 @@ def predict():
     savory_recipe_db = db['savory_recipe']
     df = simple_read_mongo(savory_recipe_db)
     X = df['combined']
-    with open('data/model.pkl', 'rb') as f:
+    with open('data/model_links.pkl', 'rb') as f:
         model = pickle.load(f)
-    with open('data/tfidf.pkl', 'rb') as f:
+    with open('data/tfidf_links.pkl', 'rb') as f:
         Tfidf = pickle.load(f)
     Tfidf_ingred = model.transform(clean_raw)
     new_Tfidf = np.append(Tfidf_ingred.toarray(), Tfidf.toarray())
@@ -46,19 +46,19 @@ def predict():
     cosine_similarities = cosine_similarity(Tfidf, Tfidf_ingred)
     similar_indices = np.argsort(cosine_similarities, axis=0)[-5:-1]
     similar_items = [df.values[i] for i in similar_indices]
-    title = similar_items[1][0][4]
-    description = similar_items[1][0][6]
-    ingredients = similar_items[1][0][3]
-    stars = similar_items[1][0][5]
-    title_2 = similar_items[2][0][4]
-    description_2 = similar_items[2][0][6]
-    ingredients_2 = similar_items[2][0][3]
-    stars_2 = similar_items[2][0][5]
-    title_3 = similar_items[3][0][4]
-    description_3 = similar_items[3][0][6]
-    ingredients_3 = similar_items[3][0][3]
-    stars_3 = similar_items[3][0][5]
-    ingredients_for_groceries = similar_items[1][0][1]
+    title = similar_items[0][0][4]
+    description = similar_items[0][0][6]
+    ingredients = similar_items[0][0][3]
+    stars = similar_items[0][0][5][:3]
+    title_2 = similar_items[1][0][4]
+    description_2 = similar_items[1][0][6]
+    ingredients_2 = similar_items[1][0][3]
+    stars_2 = similar_items[1][0][5][:3]
+    title_3 = similar_items[2][0][4]
+    description_3 = similar_items[2][0][6]
+    ingredients_3 = similar_items[2][0][3]
+    stars_3 = similar_items[2][0][5][:3]
+    ingredients_for_groceries = similar_items[0][0][1]
 
     return render_template('predict_template.html', data = (title, stars, description, ingredients, title_2, stars_2, description_2, ingredients_2, title_3,  stars_3, description_3, ingredients_3), ingredients=ingredients_for_groceries, input_ingredients=clean)
 
