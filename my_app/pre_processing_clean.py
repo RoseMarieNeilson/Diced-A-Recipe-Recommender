@@ -2,8 +2,7 @@ import spacy
 import en_core_web_sm
 import numpy as np
 import pandas as pd
-from MongoDB_hacks import simple_read_mongo
-from pymongo import MongoClient
+
 
 def nlp_list(ingredients_list, nlp):
     doc = []

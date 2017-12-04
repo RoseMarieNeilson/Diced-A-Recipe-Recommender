@@ -4,9 +4,8 @@ import spacy
 import en_core_web_sm
 import numpy as np
 import pandas as pd
-from MongoDB_hacks import simple_read_mongo
 import pickle as pickle
-from pymongo import MongoClient
+
 
 
 class TextClassifer(object):

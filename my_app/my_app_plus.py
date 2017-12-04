@@ -8,7 +8,6 @@ import string
 from sklearn.feature_extraction.text import TfidfVectorizer
 from vectorizer_clean import TextClassifer
 from sklearn.metrics.pairwise import cosine_similarity
-from MongoDB_hacks import simple_read_mongo
 from pre_processing_clean import nlp_list, remove_pos, remove_pos_list, combine_words, combine_words_list, remove_extra_quotes, stop_words_singular
 
 
