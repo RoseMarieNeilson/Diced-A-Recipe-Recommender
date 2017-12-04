@@ -5,7 +5,6 @@ import numpy as np
 import spacy
 import en_core_web_sm
 import string
-from pymongo import MongoClient
 from sklearn.feature_extraction.text import TfidfVectorizer
 from vectorizer_clean import TextClassifer
 from sklearn.metrics.pairwise import cosine_similarity
