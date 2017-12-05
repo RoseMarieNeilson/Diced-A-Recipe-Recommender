@@ -24,18 +24,14 @@ def get_recommendation():
 @app.route('/predict', methods=['POST'])
 def predict():
     ingredients = [str(request.form['user_input'])]
-    print(ingredients)
     ingredients = ingredients[0].replace(', ', ',')
     ingredients=[ingredients]
     ingredients = ingredients[0].split(',')
     list_nlp = nlp_list(ingredients, nlp)
-    print(list_nlp)
     remove = remove_pos_list(list_nlp)
     combined = [combine_words(i) for i in remove]
     clean = remove_extra_quotes(combined)
-    print(combined)
     clean_raw = [clean]
-    print(clean_raw)
 
     with open('data/pandas_actual.pkl', 'rb') as f:
         df = pickle.load(f)
@@ -55,7 +51,6 @@ def predict():
     ingredients = similar_items[-1][0][3]
     stars = similar_items[-1][0][6][:3]
     link= similar_items[-1][0][5]
-    print(link)
     title_2 = similar_items[-2][0][4]
     description_2 = similar_items[-2][0][7]
     ingredients_2 = similar_items[-2][0][3]
