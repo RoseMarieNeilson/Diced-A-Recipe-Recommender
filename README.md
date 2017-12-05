@@ -16,10 +16,7 @@
 The goal of this project is to create a recipe recommender system that will produce recipe suggestions based on ingredients the user has on hand. This app will also provide ratings of the recipes based on the star ratings provided by the scraped data from Allrecipes.com. The remaining ingredients needed for the recipe will be added to a grocery list. There will also be a link to potential coupons and savings that can be had. A further goal would be to create user profiles that can rate recipes and get improved suggestions with time.
 
 ### Data
-include link to webscraping data
-Data was scraped from Allrecipes.com using BeautifulSoup borrowing from [ChefNet's](https://github.com/Mikelew88/ChefNet/blob/master/Scripts/Web_scrapers/request_info_thread.py) webscraping scripts. These recipes were then divided between two databases for sweet and savory recipes. It was stored in MongoDB with the following keys: item_name, ingredient_list, direction_list, stars, submitter_name, and submitter_desc. describe the titles with full names, add what they are.
-show image of spacy tokens
-
+Data was scraped from Allrecipes.com using BeautifulSoup borrowing from [ChefNet's](https://github.com/Mikelew88/ChefNet/blob/master/Scripts/Web_scrapers/request_info_thread.py) webscraping scripts. These recipes were then divided between two databases for sweet and savory recipes. It was stored in MongoDB with the following keys: item name, ingredient list, direction list, stars, submitter name, and submitter description.
 The data is kept in a MongoDB database due to its json like format.
 
 | Combined                          | Direction_list | Ingred_list                 |Item_name              |Stars |Submitter_desc|
@@ -31,7 +28,31 @@ The data is kept in a MongoDB database due to its json like format.
 
 
 ### Natural Language Processing
-  In order to recommend recipes the ingredient list column needs to processed. The python library [spaCy](https://spacy.io/) was used. This includes removing stop words ('cup', 'teaspoon', etc), lower casing all words, and experimenting with different stemming and lemmatizing techniques to find the root words (changing 'apples' to 'apple'). The ingredients with multiple words were combined with underscores. This changed 'green pepper' to 'green_pepper' and helped to vectorize the data. The ingredients were vectorized with TF-IDF, which more heavily weighted the more 'rare' ingredients. This means that ingredients such as 'butter' and 'salt' were less indicative of similarity.
+  In order to recommend recipes the ingredient list column needs to processed. The python library [spaCy](https://spacy.io/) was used. This includes removing stop words ('cup', 'teaspoon', etc), lower casing all words, and experimenting with different stemming and lemmatizing techniques to find the root words (changing 'apples' to 'apple').
+
+
+  |Text  |Lemma |POS |
+  |:----:|:----:|:--:|
+  |1     |1     |NUM |
+  |cup   |cup   |NOUN|
+  |soy   |soy   |NOUN|
+  |sauce |sauce |NOUN|
+  |1     |1     |NUM |
+  |cup   |cup   |NOUN|
+  |brown |brown |ADJ |
+  |sugar |sugar |NOUN|
+  |1     |1     |NUM |
+  |cup   |cup   |NOUN|
+  |water |water |NOUN|
+  |4     |4     |NUM |
+  |cloves|clove |NOUN|
+  |garlic|garlic|ADJ |
+
+
+
+
+
+  The ingredients with multiple words were combined with underscores. This changed 'green pepper' to 'green_pepper' and helped to vectorize the data. The ingredients were vectorized with TF-IDF, which more heavily weighted the more 'rare' ingredients. This means that ingredients such as 'butter' and 'salt' were less indicative of similarity.
 
 if i would look at straight word ffrequencies i would get something like this. which is why i used td-idf
 
